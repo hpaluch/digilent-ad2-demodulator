@@ -54,23 +54,28 @@ NOTE: The CH2/W2 wirings are optional (reserved for future experiments).
 
 ![Digilent AD2 Demodulator](assets/digilent-ad2-scope.png)
 
-You will see three channels:
+You will see 5 channels:
 
-1. Sine Carrier at frequency 1 kHz modulated with another
+1. Yellow: Sine Carrier at frequency 1 kHz modulated with another
    Sine Envelope (transmitted information) at frequency 100 Hz
 
-2. Demodulated signal - emulating Diode detector - only positive
+2. Red: Demodulated signal - emulating single Diode detector - only positive
    values passes through. This step is fundamental in demodulation,
    otherwise envelope will cancel-out (average is 0) and is base
    for crystal radio. Another popular demodulator
    is Direct Conversion, by mixing Oscillator with same frequency
    as Carrier, but it is not shown in this example.
 
-3. Finally we will filter-out carrier frequency to get just envelope.
+3. Blue: Finally we will filter-out carrier frequency to get just envelope.
    In case of crystal radio, RC low-pass filter is often used. Please
    note that it is always trade-off - to filter out all carrier but
    do not smooth also Envelope - it is usual compromise.
 
+4. Magenta compared to 2. Red -  we demodulate signal using two-way detector (basically
+   two diodes so both waves will be used).
+
+5. Green: low-pass filter from Magenta - two-way detected. Notice 2 times higher
+   amplitude than in case of single way rectifier (Red) which is handy.
 
 
 
